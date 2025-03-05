@@ -1,12 +1,16 @@
-let number = parseFloat(prompt("Nhập số nguyên bất kì"));
-if (number <2){
-    alert("Không phải số nguyên tố");
-}else {
-    for(let i = 2;i*i<=number;i++){
+let number = parseInt(prompt("Nhap mot so bat ki"));
+if (isNaN(number) || number < 2){
+    console.log("So khong hop le");
+} else {
+    let primeNum = true;
+    for (let i = 2; i <= Math.sqrt(number); i++){
         if(number % i === 0){
-            alert("Không phải số nguyên tố");
-            break;
+            primeNum = false;
         }
-        alert("Là số nguyên tố");
+    }
+    if (primeNum){
+        console.log("Day la so nguyen to");
+    } else {
+        console.log("Day khong phai so nguyen to");
     }
 }
